@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const authRoutes = require('./routes/auth');
-const trainsRoutes = require('./routes/trains');
+const trainsRoutes = require('./routes/train');
 const authenticationMiddleware = require('./middleware/authenticationMiddleware');
 
 app.use(express.json());
