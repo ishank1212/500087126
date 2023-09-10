@@ -1,4 +1,3 @@
-// App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AllTrainsPage from './pages/AllTrainsPage';
@@ -8,8 +7,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" exact component={AllTrainsPage} />
-        <Route path="/train/:trainNumber" component={SingleTrainPage} />
+        <Route path="/" exact element={AllTrainsPage} />
+        <Route path="/train/:trainNumber" element={SingleTrainPage} />
       </Routes>
     </Router>
   );
