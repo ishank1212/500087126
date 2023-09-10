@@ -9,3 +9,6 @@
 # Get All Trains: 
 ![Screenshot (41)](https://github.com/ishank1212/R2142201809/assets/73271919/b231a2bf-cadc-4335-93f6-885499f57fe5)
 ![Screenshot (40)](https://github.com/ishank1212/R2142201809/assets/73271919/9ff0221e-e3f8-40c8-8a5c-179639d517a6)
+
+# Get train by no. 
+![Screenshot (42)](https://github.com/ishank1212/R2142201809/assets/73271919/8eb6e35f-380d-46bd-bc26-c5aeabaf239a)
