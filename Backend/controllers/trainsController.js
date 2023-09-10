@@ -3,7 +3,7 @@ const axios = require('axios');
 module.exports = {
   getAllTrains: async (req, res) => {
     try {
-      // Make a GET request to fetch all train details (requires authentication token)
+      //  fetch all train details 
       const response = await axios.get('http://20.244.56.144/train/trains', {
         headers: {
           Authorization: `Bearer ${req.accessToken}`,
@@ -11,7 +11,7 @@ module.exports = {
       });
 
       const sortedTrains = response.data.map((train) => {
-        // Calculate the actual departure time by considering delays (in minutes)
+        // departure time(in minutes)
         const departureTime = new Date(train.departureTime.Hours * 60 * 60 * 1000 + train.departureTime.Minutes * 60 * 1000 + train.delayedBy * 60 * 1000);
 
         return {
@@ -23,7 +23,7 @@ module.exports = {
         };
       });
 
-      // Sort the trains by price (ascending), tickets (descending), and departure time (descending)
+      // Sort trains by price (ascending), tickets (descending), and departure time (descending)
       sortedTrains.sort((a, b) => {
         // Sort by price in ascending order
         const priceDiff = a.price.sleeper + a.price.AC - (b.price.sleeper + b.price.AC);
@@ -48,14 +48,13 @@ module.exports = {
     try {
       const { trainNumber } = req.params;
 
-      // Make a GET request to fetch a specific train's details (requires authentication token)
+      // GET-specific train's details (requires authentication token)
       const response = await axios.get(`http://20.244.56.144/train/trains/${trainNumber}`, {
         headers: {
           Authorization: `Bearer ${req.accessToken}`,
         },
       });
 
-      // Return the train details
       res.status(200).json(response.data);
     } catch (error) {
       console.error(error);

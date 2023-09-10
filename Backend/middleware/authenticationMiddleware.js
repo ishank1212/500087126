@@ -3,7 +3,6 @@ const { CLIENT_ID, CLIENT_SECRET } = require('../config/config');
 
 module.exports = async (req, res, next) => {
   try {
-    // Check if the access token is present in the request headers
     const token = req.headers.authorization;
 
     if (!token) {
@@ -20,8 +19,6 @@ module.exports = async (req, res, next) => {
     if (response.status !== 200) {
       return res.status(401).json({ error: 'Unauthorized' });
     }
-
-    // Store the access token in the request for further use
     req.accessToken = token;
 
     // Continue to the next middleware or route handler

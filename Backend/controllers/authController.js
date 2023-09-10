@@ -15,7 +15,7 @@ module.exports = {
         accessCode,
       });
 
-      // Store the client ID and client secret securely (e.g., in environment variables)
+      // Store the client ID and client secret
       const { clientID, clientSecret } = response.data;
 
       res.status(200).json({ clientID, clientSecret });
@@ -29,7 +29,7 @@ module.exports = {
     try {
       const { companyName, clientID, ownerName, ownerEmail, rollNo, clientSecret } = req.body;
 
-      // Make a POST request to obtain an authorization token
+      //  POST request- authorization token
       const response = await axios.post('http://20.244.56.144/train/auth', {
         companyName,
         clientID,
@@ -39,7 +39,6 @@ module.exports = {
         clientSecret,
       });
 
-      // Return the access token
       const { token_type, access_token } = response.data;
 
       res.status(200).json({ token_type, access_token });
